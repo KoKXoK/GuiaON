@@ -3,104 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>GuiaON | Praia Grande • SP</title>
+  <title>PanfletoOnline - Praia Grande SP | Guia Turístico Completo</title>
+  <meta name="description" content="Guia turístico de Praia Grande SP: orla, shoppings, parques, pontos turísticos, restaurantes e muito mais. Descubra o melhor da cidade.">
+  <meta name="keywords" content="Praia Grande, SP, turismo, guia, orla, pontos turísticos, shopping, parques, praia">
+  <meta name="author" content="PanfletoOnline">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://panfletonline.com/praia-grande">
+  <meta property="og:title" content="PanfletoOnline - Praia Grande SP | Guia Turístico Completo">
+  <meta property="og:description" content="Descubra os melhores pontos turísticos, praias, shoppings e parques de Praia Grande SP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://panfletonline.com/praia-grande">
+  <meta property="og:image" content="https://panfletonline.com/orlapg.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PanfletoOnline - Praia Grande SP | Guia Turístico Completo">
+  <meta name="twitter:description" content="Descubra os melhores pontos turísticos, praias, shoppings e parques de Praia Grande SP.">
+  <meta name="twitter:image" content="https://panfletonline.com/orlapg.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
     <div>
-      <h1>GuiaON</h1>
+      <h1>PanfletoOnline</h1>
       <div class="subtitulo">Praia Grande • SP</div>
     </div>
-    <div style="font-size: 0.9rem; opacity: 0.9;">⚙️</div>
+    <button class="btn-engrenagem" id="btnConfig" aria-label="Configurações">⚙️</button>
   </header>
   <main class="conteudo-linhas">
-    <div class="linha-item">
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="orlapg.jpg" alt="Orla da Praia Grande">
+        <img src="orlapg.jpg" alt="Orla da Praia Grande com calçadão e quiosques">
       </div>
       <div class="descricao">
-        <h2>Orla da Praia</h2>
-        <p>A extensa orla de Praia Grande é o cartão-postal da cidade, com calçadão revitalizado, quiosques, ciclovia e jardins bem cuidados. Perfeita para caminhadas, esportes e contemplar o pôr do sol.</p>
+        <h2 data-i18n="orla_titulo">Orla da Praia</h2>
+        <p data-i18n="orla_desc">A extensa orla de Praia Grande é o cartão-postal da cidade, com calçadão revitalizado, quiosques, ciclovia e jardins bem cuidados. Perfeita para caminhadas, esportes e contemplar o pôr do sol.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Pres. Castelo Branco (Canto do Forte até Solemar)
+          <span>📍</span> <span data-i18n="orla_end">Avenida Pres. Castelo Branco (Canto do Forte até Solemar)</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="acs.jpg" alt="Avenida Costa e Silva">
+        <img src="acs.jpg" alt="Avenida Costa e Silva centro comercial de Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Avenida Costa e Silva</h2>
-        <p>Principal corredor comercial da cidade, a Costa e Silva concentra lojas, restaurantes, farmácias, bancos e grande movimento. É o ponto de encontro para compras e vida urbana no dia a dia.</p>
+        <h2 data-i18n="costa_titulo">Avenida Costa e Silva</h2>
+        <p data-i18n="costa_desc">Principal corredor comercial da cidade, a Costa e Silva concentra lojas, restaurantes, farmácias, bancos e grande movimento. É o ponto de encontro para compras e vida urbana no dia a dia.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Costa e Silva – Boqueirão
+          <span>📍</span> <span data-i18n="costa_end">Avenida Costa e Silva – Boqueirão</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="lps.jpg" alt="Litoral Plaza Shopping">
+        <img src="lps.jpg" alt="Shopping Litoral Plaza em Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Shopping Litoral Plaza</h2>
-        <p>O Litoral Plaza Shopping oferece dezenas de lojas, praça de alimentação diversificada, cinema e entretenimento para toda a família. É uma das principais opções de lazer e compras da região.</p>
+        <h2 data-i18n="shopping_titulo">Shopping Litoral Plaza</h2>
+        <p data-i18n="shopping_desc">O Litoral Plaza Shopping oferece dezenas de lojas, praça de alimentação diversificada, cinema e entretenimento para toda a família. É uma das principais opções de lazer e compras da região.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Ayrton Senna, 1500 – Bairro Xixová
+          <span>📍</span> <span data-i18n="shopping_end">Avenida Ayrton Senna, 1500 – Bairro Xixová</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="netuno.jpg" alt="Estátua de Netuno">
+        <img src="netuno.jpg" alt="Estátua de Netuno em Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Estátua de Netuno</h2>
-        <p>Muito mais do que um belo cenário para fotos, a Estátua de Netuno representa um capítulo importante da história de Praia Grande. Inaugurada em 1956, ela está ligada ao surgimento da Cidade Ocian, um dos primeiros grandes projetos urbanísticos da região. O empreendimento ajudou a transformar uma área ainda pouco ocupada em um polo de moradia e turismo, impulsionando o crescimento urbano que moldaria a cidade nas décadas seguintes. Hoje, o monumento permanece como um símbolo da expansão e do desenvolvimento de Praia Grande.</p>
+        <h2 data-i18n="netuno_titulo">Estátua de Netuno</h2>
+        <p data-i18n="netuno_desc">Muito mais do que um belo cenário para fotos, a Estátua de Netuno representa um capítulo importante da história de Praia Grande. Inaugurada em 1956, ela está ligada ao surgimento da Cidade Ocian, um dos primeiros grandes projetos urbanísticos da região. O empreendimento ajudou a transformar uma área ainda pouco ocupada em um polo de moradia e turismo, impulsionando o crescimento urbano que moldaria a cidade nas décadas seguintes. Hoje, o monumento permanece como um símbolo da expansão e do desenvolvimento de Praia Grande.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Pres. Castelo Branco - Bairro Ocian
+          <span>📍</span> <span data-i18n="netuno_end">Avenida Pres. Castelo Branco - Bairro Ocian</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="portin.jpg" alt="Portinho">
+        <img src="portin.jpg" alt="Portinho parque ecológico em Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Portinho</h2>
-        <p>A Área de Lazer Ézio Dall'Acqua, é um dos parques ecológicos mais tradicionais e encantadores da Baixada Santista. Localizado logo na entrada da cidade, às margens do Mar Pequeno, ele oferece uma alternativa tranquila e arborizada à agitação das praias tradicionais, sendo o cenário ideal para passeios em família e contato com a natureza.</p>
+        <h2 data-i18n="portinho_titulo">Portinho</h2>
+        <p data-i18n="portinho_desc">A Área de Lazer Ézio Dall'Acqua, é um dos parques ecológicos mais tradicionais e encantadores da Baixada Santista. Localizado logo na entrada da cidade, às margens do Mar Pequeno, ele oferece uma alternativa tranquila e arborizada à agitação das praias tradicionais, sendo o cenário ideal para passeios em família e contato com a natureza.</p>
         <div class="localizacao">
-          <span>📍</span> Rua Paulo Sérgio Garcia, s/n - Bairro Sítio do Campo
+          <span>📍</span> <span data-i18n="portinho_end">Rua Paulo Sérgio Garcia, s/n - Bairro Sítio do Campo</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="pda.jpeg" alt="Palácio das Artes">
+        <img src="pda.jpeg" alt="Palácio das Artes complexo cultural Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Palácio das artes</h2>
-        <p>O maior complexo cultural de Praia Grande. Localizado na entrada da cidade, o espaço une modernidade e história com o Teatro Serafim Gonzalez, a Galeria de Artes Nilton Zanotti e o Museu da Cidade. Um passeio imperdível, totalmente climatizado, com estacionamento no local e entrada gratuita para o museu e exposições.</p>
+        <h2 data-i18n="palacio_titulo">Palácio das artes</h2>
+        <p data-i18n="palacio_desc">O maior complexo cultural de Praia Grande. Localizado na entrada da cidade, o espaço une modernidade e história com o Teatro Serafim Gonzalez, a Galeria de Artes Nilton Zanotti e o Museu da Cidade. Um passeio imperdível, totalmente climatizado, com estacionamento no local e entrada gratuita para o museu e exposições.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Presidente Costa e Silva, 1600 - Boqueirão
+          <span>📍</span> <span data-i18n="palacio_end">Avenida Presidente Costa e Silva, 1600 - Boqueirão</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
-        <img src="iemanja.jpg" alt="Estátua de Iemanjá">
+        <img src="iemanja.jpg" alt="Estátua de Iemanjá na orla de Praia Grande">
       </div>
       <div class="descricao">
-        <h2>Estátua de Iemanjá</h2>
-        <p>A estátua de Iemanjá na orla da praia do bairro Vila Mirim é um dos principais pontos turísticos da orla da cidade, sendo um dos principais pontos de fotografias entre turístas.</p>
+        <h2 data-i18n="iemanja_titulo">Estátua de Iemanjá</h2>
+        <p data-i18n="iemanja_desc">A estátua de Iemanjá na orla da praia do bairro Vila Mirim é um dos principais pontos turísticos da orla da cidade, sendo um dos principais pontos de fotografias entre turístas.</p>
         <div class="localizacao">
-          <span>📍</span> Avenida Pres. Castelo Branco - Bairro Vila Mirim
+          <span>📍</span> <span data-i18n="iemanja_end">Avenida Pres. Castelo Branco - Bairro Vila Mirim</span>
         </div>
       </div>
-    </div>
-    <div class="linha-item">
+    </article>
+    <article class="linha-item">
       <div class="foto-container">
+        <img src="pqdcd.jpg" alt="Parque da Cidade Praia Grande">
+      </div>
+      <div class="descricao">
+        <h2 data-i18n="parque_titulo">Parque da cidade</h2>
+        <p data-i18n="parque_desc">Ao lado do Terminal Tude Bastos, o Parque da Cidade é o refúgio perfeito para toda a família, unindo esporte, cultura e bem-estar em um amplo espaço verde com entrada gratuita.A estrutura completa oferece Orquidário Municipal, espelhos d'água, playground infantil, Dog Park para o lazer dos pets, pista de atletismo oficial, circuito de caminhada, academia ao ar livre e quiosques ideais para piqueniques.Funcionamento: Diariamente, das 06h às 22h. Entrada gratuita.</p>
+        <div class="localizacao">
+          <span>📍</span> <span data-i18n="parque_end">Rua José Bonifácio, s/n - Bairro Sítio do Campo</span>
+        </div>
+      </div>
+    </article>
+    <article class="linha-item">
+      <div class="foto-container">
+        <img src="ip.png" alt="Trilha Itutinga-Pilões ecoturismo Praia Grande">
+      </div>
+      <div class="descricao">
+        <h2 data-i18n="trilha_titulo">Trilha Itutinga-Pilões</h2>
+        <p data-i18n="trilha_desc">🌿 Núcleo Itutinga-Pilões (Praia Grande): Refúgio de Mata Atlântica no Jardim Melvi com cachoeiras e poços de águas cristalinas. É o destino perfeito para quem quer trocar a praia por ecoturismo. O acesso é controlado: exige agendamento online prévio, acompanhamento de guia credenciado e uso obrigatório de tênis.</p>
+        <div class="localizacao">
+          <span>📍</span> <span data-i18n="trilha_end">Avenida Wilson de Oliveira, s/n - Bairro Jardim Melvi</span>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="footer">
+    <span data-i18n="footer1">⚓ Praia Grande · SP · PanfletoOnline</span>
+    <span style="font-size: 0.75rem;" data-i18n="footer2">PanfletoOnline © 2026 • Descubra o melhor da cidade</span>
+  </footer>
+  <div class="config-overlay" id="configOverlay"></div>
+  <div class="config-modal" id="configModal">
+    <div class="config-header">
+      <h3 data-i18n="config_titulo">Configurações</h3>
+      <button class="config-close" id="configClose">✕</button>
+    </div>
+    <div class="config-body">
+      <div class="config-item">
+        <label for="language" data-i18n="config_idioma">Idioma</label>
+        <select id="language">
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label for="theme" data-i18n="config_tema">Tema</label>
+        <select id="theme">
+          <option value="auto">Padrão do navegador</option>
+          <option value="claro">Claro</option>
+          <option value="escuro">Escuro</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label for="fontSize" data-i18n="config_fonte">Tamanho da fonte</label>
+        <select id="fontSize">
+          <option value="pequena">Pequena</option>
+          <option value="normal" selected>Normal</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+      <button class="config-reset" id="configReset" data-i18n="config_reset">Restaurar padrão</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>      <div class="foto-container">
         <img src="pqdcd.jpg" alt="Parque da Cidade">
       </div>
       <div class="descricao">
