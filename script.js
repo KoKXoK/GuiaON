@@ -178,6 +178,117 @@ configReset.addEventListener('click', function() {
   localStorage.removeItem('theme');
   localStorage.removeItem('fontSize');
 });
+const eventosData = {};
+function adicionarEvento(dia, mes, ano, nome, horario) {
+  const chave = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
+  if (!eventosData[chave]) {
+    eventosData[chave] = [];
+  }
+  eventosData[chave].push({ nome, horario });
+}
+adicionarEvento(15, 6, 2026, 'Festival de Praia', '10:00');
+adicionarEvento(15, 6, 2026, 'Feira de Artesanato', '14:00');
+adicionarEvento(20, 6, 2026, 'Show na Orla', '19:00');
+adicionarEvento(25, 6, 2026, 'Campeonato de Surf', '08:00');
+adicionarEvento(1, 7, 2026, 'Festa Julina', '18:00');
+adicionarEvento(10, 7, 2026, 'Teatro Municipal', '20:00');
+const calTitulo = document.getElementById('calTitulo');
+const calGrid = document.getElementById('calGrid');
+const calPrev = document.getElementById('calPrev');
+const calNext = document.getElementById('calNext');
+const modalEventoOverlay = document.getElementById('modalEventoOverlay');
+const modalEvento = document.getElementById('modalEvento');
+const modalEventoClose = document.getElementById('modalEventoClose');
+const modalEventoTitulo = document.getElementById('modalEventoTitulo');
+const modalEventoBody = document.getElementById('modalEventoBody');
+let calAno, calMes;
+const hoje = new Date();
+calAno = hoje.getFullYear();
+calMes = hoje.getMonth() + 1;
+function renderizarCalendario() {
+  const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+  calTitulo.textContent = `${meses[calMes - 1]} de ${calAno}`;
+  calGrid.innerHTML = '';
+  diasSemana.forEach(d => {
+    const div = document.createElement('div');
+    div.className = 'dia-semana';
+    div.textContent = d;
+    calGrid.appendChild(div);
+  });
+  const primeiroDia = new Date(calAno, calMes - 1, 1).getDay();
+  const diasNoMes = new Date(calAno, calMes, 0).getDate();
+  const diasMesAnterior = new Date(calAno, calMes - 1, 0).getDate();
+  for (let i = primeiroDia - 1; i >= 0; i--) {
+    const div = document.createElement('div');
+    div.className = 'dia vazio outro-mes';
+    div.textContent = diasMesAnterior - i;
+    calGrid.appendChild(div);
+  }
+  for (let dia = 1; dia <= diasNoMes; dia++) {
+    const div = document.createElement('div');
+    div.className = 'dia';
+    div.textContent = dia;
+    const chave = `${calAno}-${String(calMes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
+    if (eventosData[chave] && eventosData[chave].length > 0) {
+      div.classList.add('com-evento');
+      div.addEventListener('click', () => abrirModalEventos(dia, calMes, calAno));
+    }
+    calGrid.appendChild(div);
+  }
+  const totalCelulas = primeiroDia + diasNoMes;
+  const resto = totalCelulas % 7;
+  if (resto > 0) {
+    for (let i = 1; i <= 7 - resto; i++) {
+      const div = document.createElement('div');
+      div.className = 'dia vazio outro-mes';
+      div.textContent = i;
+      calGrid.appendChild(div);
+    }
+  }
+}
+function abrirModalEventos(dia, mes, ano) {
+  const chave = `${ano}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`;
+  const eventos = eventosData[chave] || [];
+  modalEventoTitulo.textContent = `Eventos - ${String(dia).padStart(2, '0')}/${String(mes).padStart(2, '0')}/${ano}`;
+  modalEventoBody.innerHTML = '';
+  if (eventos.length === 0) {
+    modalEventoBody.innerHTML = '<div class="sem-eventos">Nenhum evento neste dia</div>';
+  } else {
+    eventos.forEach(ev => {
+      const div = document.createElement('div');
+      div.className = 'evento-item';
+      div.innerHTML = `<span class="evento-nome">${ev.nome}</span><span class="evento-horario">${ev.horario}</span>`;
+      modalEventoBody.appendChild(div);
+    });
+  }
+  modalEvento.classList.add('active');
+  modalEventoOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function fecharModalEventos() {
+  modalEvento.classList.remove('active');
+  modalEventoOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+calPrev.addEventListener('click', () => {
+  calMes--;
+  if (calMes < 1) { calMes = 12; calAno--; }
+  renderizarCalendario();
+});
+calNext.addEventListener('click', () => {
+  calMes++;
+  if (calMes > 12) { calMes = 1; calAno++; }
+  renderizarCalendario();
+});
+modalEventoClose.addEventListener('click', fecharModalEventos);
+modalEventoOverlay.addEventListener('click', fecharModalEventos);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && modalEvento.classList.contains('active')) {
+    fecharModalEventos();
+  }
+});
+renderizarCalendario();
 window.addEventListener('load', function() {
   const savedLang = localStorage.getItem('language') || 'pt';
   const savedTheme = localStorage.getItem('theme') || 'auto';
