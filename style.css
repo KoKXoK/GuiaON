@@ -330,3 +330,90 @@ body {
     margin: 1.5rem auto;
   }
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 199;
+  display: none;
+}
+.modal-overlay.active {
+  display: block;
+}
+.modal-detalhe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 200;
+  display: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  padding: 1.5rem;
+}
+.modal-detalhe.active {
+  display: block;
+}
+.modal-fechar {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-galeria {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.modal-galeria img {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.modal-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.modal-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.meta-item {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.meta-item strong {
+  color: var(--text);
+}
