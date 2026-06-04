@@ -277,6 +277,181 @@ body {
 .config-reset:hover {
   opacity: 0.9;
 }
+.calendario-section {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 1.5rem;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 4px var(--card-shadow);
+}
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.calendario-header h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.calendario-header button {
+  background: var(--header-bg);
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.calendario-header button:hover {
+  opacity: 0.8;
+}
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+.calendario-grid .dia-semana {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0.4rem;
+}
+.calendario-grid .dia {
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: default;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: background 0.2s;
+  position: relative;
+}
+.calendario-grid .dia.com-evento {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a73e8;
+}
+.calendario-grid .dia.com-evento::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1a73e8;
+}
+.calendario-grid .dia.com-evento:hover {
+  background: #e8f0fe;
+}
+.calendario-grid .dia.vazio {
+  cursor: default;
+}
+.calendario-grid .dia.outro-mes {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+.modal-evento-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 299;
+  display: none;
+}
+.modal-evento-overlay.active {
+  display: block;
+}
+.modal-evento {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card-bg);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  z-index: 300;
+  display: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.modal-evento.active {
+  display: block;
+}
+.modal-evento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: var(--modal-header-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+.modal-evento-header h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.modal-evento-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-evento-close:hover {
+  background: var(--card-border);
+}
+.modal-evento-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.evento-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+.evento-item:last-child {
+  border-bottom: none;
+}
+.evento-nome {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.evento-horario {
+  font-size: 0.85rem;
+  color: #1a73e8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sem-eventos {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
 @media (max-width: 600px) {
   .linha-item {
     flex-direction: column;
