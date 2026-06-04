@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>PanfletoOnline - Praia Grande SP | Guia Turístico Completo</title>
+  <title>Panfletonline - Praia Grande SP | Guia Turístico Completo</title>
   <meta name="description" content="Guia turístico de Praia Grande SP: orla, shoppings, parques, pontos turísticos, restaurantes e muito mais. Descubra o melhor da cidade.">
   <meta name="keywords" content="Praia Grande, SP, turismo, guia, orla, pontos turísticos, shopping, parques, praia">
-  <meta name="author" content="PanfletoOnline">
+  <meta name="author" content="Panfletonline">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://panfletonline.com/praia-grande">
-  <meta property="og:title" content="PanfletoOnline - Praia Grande SP | Guia Turístico Completo">
+  <meta property="og:title" content="Panfletonline - Praia Grande SP | Guia Turístico Completo">
   <meta property="og:description" content="Descubra os melhores pontos turísticos, praias, shoppings e parques de Praia Grande SP.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://panfletonline.com/praia-grande">
   <meta property="og:image" content="https://panfletonline.com/orlapg.jpg">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PanfletoOnline - Praia Grande SP | Guia Turístico Completo">
+  <meta name="twitter:title" content="Panfletonline - Praia Grande SP | Guia Turístico Completo">
   <meta name="twitter:description" content="Descubra os melhores pontos turísticos, praias, shoppings e parques de Praia Grande SP.">
   <meta name="twitter:image" content="https://panfletonline.com/orlapg.jpg">
   <link rel="stylesheet" href="style.css">
@@ -24,13 +24,13 @@
 <body>
   <header class="header">
     <div>
-      <h1>PanfletoOnline</h1>
+      <h1>Panfletonline</h1>
       <div class="subtitulo">Praia Grande • SP</div>
     </div>
     <button class="btn-engrenagem" id="btnConfig" aria-label="Configurações">⚙️</button>
   </header>
   <main class="conteudo-linhas">
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="orla">
       <div class="foto-container">
         <img src="orlapg.jpg" alt="Orla da Praia Grande com calçadão e quiosques">
       </div>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="costa">
       <div class="foto-container">
         <img src="acs.jpg" alt="Avenida Costa e Silva centro comercial de Praia Grande">
       </div>
@@ -54,7 +54,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="shopping">
       <div class="foto-container">
         <img src="lps.jpg" alt="Shopping Litoral Plaza em Praia Grande">
       </div>
@@ -66,7 +66,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="netuno">
       <div class="foto-container">
         <img src="netuno.jpg" alt="Estátua de Netuno em Praia Grande">
       </div>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="portinho">
       <div class="foto-container">
         <img src="portin.jpg" alt="Portinho parque ecológico em Praia Grande">
       </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="palacio">
       <div class="foto-container">
         <img src="pda.jpeg" alt="Palácio das Artes complexo cultural Praia Grande">
       </div>
@@ -102,7 +102,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="iemanja">
       <div class="foto-container">
         <img src="iemanja.jpg" alt="Estátua de Iemanjá na orla de Praia Grande">
       </div>
@@ -114,7 +114,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="parque">
       <div class="foto-container">
         <img src="pqdcd.jpg" alt="Parque da Cidade Praia Grande">
       </div>
@@ -126,7 +126,7 @@
         </div>
       </div>
     </article>
-    <article class="linha-item">
+    <article class="linha-item" data-ponto="trilha">
       <div class="foto-container">
         <img src="ip.png" alt="Trilha Itutinga-Pilões ecoturismo Praia Grande">
       </div>
@@ -138,18 +138,24 @@
         </div>
       </div>
     </article>
-    <section class="calendario-section">
-  <div class="calendario-header">
-    <button id="calPrev">◀</button>
-    <h2 id="calTitulo"></h2>
-    <button id="calNext">▶</button>
-  </div>
-  <div class="calendario-grid" id="calGrid"></div>
-    </section>
+    <div class="calendario-container">
+      <h3 class="calendario-titulo">📅 Calendário de eventos:</h3>
+      <div class="calendario-meses">
+        <button class="calendario-btn" id="btnJunho">Junho</button>
+        <button class="calendario-btn" id="btnJulho">Julho</button>
+        <button class="calendario-btn" id="btnAgosto">Agosto</button>
+      </div>
+      <div class="calendario-grid" id="calendarioGrid"></div>
+      <div class="evento-detalhe" id="eventoDetalhe" style="display:none;">
+        <h4 id="eventoTitulo"></h4>
+        <p id="eventoDesc"></p>
+        <p id="eventoHora"></p>
+      </div>
+    </div>
   </main>
   <footer class="footer">
-    <span data-i18n="footer1">⚓ Praia Grande · SP · PanfletoOnline</span>
-    <span style="font-size: 0.75rem;" data-i18n="footer2">PanfletoOnline © 2026 • Descubra o melhor da cidade</span>
+    <span data-i18n="footer1">⚓ Praia Grande · SP · Panfletonline</span>
+    <span style="font-size: 0.75rem;" data-i18n="footer2">Panfletonline © 2026 • Descubra o melhor da cidade</span>
   </footer>
   <div class="config-overlay" id="configOverlay"></div>
   <div class="config-modal" id="configModal">
@@ -186,20 +192,20 @@
     </div>
   </div>
   <div class="modal-overlay" id="modalOverlay"></div>
-<div class="modal-detalhe" id="modalDetalhe">
-  <button class="modal-fechar" id="modalFechar">✕</button>
-  <div class="modal-galeria" id="modalGaleria"></div>
-  <div class="modal-info">
-    <h2 id="modalTitulo"></h2>
-    <p id="modalDesc"></p>
-    <div class="modal-meta">
-      <div class="meta-item"><strong>🕐 Horário:</strong> <span id="modalHorario"></span></div>
-      <div class="meta-item"><strong>📞 Telefone:</strong> <span id="modalTelefone"></span></div>
-      <div class="meta-item"><strong>💲 Entrada:</strong> <span id="modalPreco"></span></div>
-      <div class="meta-item"><strong>📍 Endereço:</strong> <span id="modalEndereco"></span></div>
+  <div class="modal-detalhe" id="modalDetalhe">
+    <button class="modal-fechar" id="modalFechar">✕</button>
+    <div class="modal-galeria" id="modalGaleria"></div>
+    <div class="modal-info">
+      <h2 id="modalTitulo"></h2>
+      <p id="modalDesc"></p>
+      <div class="modal-meta">
+        <div class="meta-item"><strong>🕐 Horário:</strong> <span id="modalHorario"></span></div>
+        <div class="meta-item"><strong>📞 Telefone:</strong> <span id="modalTelefone"></span></div>
+        <div class="meta-item"><strong>💲 Entrada:</strong> <span id="modalPreco"></span></div>
+        <div class="meta-item"><strong>📍 Endereço:</strong> <span id="modalEndereco"></span></div>
+      </div>
     </div>
   </div>
-</div>
   <script src="script.js"></script>
 </body>
 </html>
